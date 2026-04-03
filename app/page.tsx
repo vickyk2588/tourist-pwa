@@ -1,27 +1,11 @@
-import { makeStore } from '@/store';
-import HydrateClient from './HydrateClient';
+'use server'
 import Home from '@/features/home/Home';
-
-import { api } from '@/generated/graphql';
-
-export const revalidate = 60;
+import { FetchHomeDataDocument } from '@/generated/graphql';
+import { graphqlClient } from '@/services/client';
 
 export default async function Page() {
-  const store = makeStore();
+  const data = await graphqlClient.request(FetchHomeDataDocument);
+console.log("data----",data);
 
-  store.dispatch(
-    api.endpoints.FetchHomeData.initiate()
-  );
-
-  await Promise.all(
-    store.dispatch(api.util.getRunningQueriesThunk())
-  );
-
-  const state = store.getState();
-
-  return (
-    <HydrateClient state={state}>
-      <Home />
-    </HydrateClient>
-  );
+  return <Home/>;
 }

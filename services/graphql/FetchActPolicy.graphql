@@ -1,0 +1,34 @@
+query FetchActPolicy{
+  actPolicyAndScheme {
+    data {
+      attributes {
+        content {
+          __typename
+
+          ... on ComponentFilmistanBanner {
+            id
+            bannerTitle
+            bannerDetails
+            bannerImage {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+          }
+
+          ... on ComponentCommonPolicyCard {
+            id
+            title
+            content {
+              id
+              title
+              link
+            }
+          }
+        }
+      }
+    }
+  }
+}

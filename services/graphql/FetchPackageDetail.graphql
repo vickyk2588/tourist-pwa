@@ -1,0 +1,69 @@
+query FetchPackageDetail($slug: String) {
+  packageDetails(filters: { slug: { eq: $slug } }) {
+    data {
+      id
+      attributes {
+        name
+        days
+        description
+        bookable
+        images {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+        overview
+        places {
+          title
+          places(pagination: { pageSize: 999 }) {
+            data {
+              attributes {
+                name
+                     city {
+                      data {
+                        attributes {
+                          name
+                        }
+                      }
+                    }
+                images {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                categories {
+                          data {
+                            attributes {
+                              Name
+
+                              icon {
+                                data {
+                                  attributes {
+                                    url
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                placeDetail {
+                  data {
+                    attributes {
+                      slug
+                    }
+                  }
+                }
+                description
+                rating
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

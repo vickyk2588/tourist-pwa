@@ -1,0 +1,26 @@
+query FetchHowToGetThere {
+  howToGetThere {
+    data {
+      attributes {
+        title
+        content {
+          ... on ComponentCommonHowToGetThere {
+            __typename
+            id
+            title
+            description
+            image {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+            align
+            bookLink
+          }
+        }
+      }
+    }
+  }
+}

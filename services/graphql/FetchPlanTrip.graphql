@@ -1,0 +1,19 @@
+query FetchPlanTrip{
+planTrip{
+  data{
+     attributes{
+      trip{
+        title
+        link
+        image{
+          data{
+            attributes{
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+}
+}

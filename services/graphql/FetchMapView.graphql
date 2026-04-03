@@ -1,0 +1,158 @@
+query FetchMapView {
+  placeDetails(pagination: { limit: 999 }) {
+    data {
+      attributes {
+        place {
+          data {
+            id
+            attributes {
+              name
+              link
+              bookable
+              images(pagination: { limit: 999 }) {
+                data {
+                  attributes {
+                    url
+                  }
+                }
+              }
+              description
+            }
+          }
+        }
+        content {
+          __typename
+
+          ... on ComponentPlaceDetailHeader {
+            id
+          }
+
+          ... on ComponentPlaceDetailImages {
+            id
+          }
+
+          ... on ComponentPlaceDetailDescription {
+            id
+            title
+          }
+
+          ... on ComponentPlaceDetailPlaceoverview {
+            id
+            overview {
+              description
+              lat
+              long
+              address
+            }
+          }
+
+          ... on ComponentPlaceDetailPlacetickets {
+            id
+            title1
+            title2
+          }
+
+          ... on ComponentPlaceDetailPlaceothers {
+            id
+            title1
+            title2
+          }
+
+          ... on ComponentPlaceDetailPlaceexhibit {
+            id
+            exhibit(pagination: { limit: 999 }) {
+              name
+              slug
+            }
+          }
+
+          ... on ComponentPlaceDetailPlacestovisit {
+            title
+            description
+            id
+            icon {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+          }
+
+          ... on ComponentPlaceDetailPlaceGallery {
+            id
+            image(pagination: { limit: 999 }) {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+          }
+
+          ... on ComponentPlaceDetail3DVideo {
+            id
+            threeDvideo {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+          }
+
+          ... on ComponentPlaceDetailDynamicprice {
+            id
+          }
+        }
+      }
+    }
+  }
+
+  places(pagination: { limit: 999 }) {
+    data {
+      id
+      attributes {
+        name
+        subCategory
+         city {
+          data {
+            id
+            attributes {
+              name
+              nickname
+              cityDetail{
+                data{
+                  attributes{
+                    slug
+                  }
+                }
+              }
+            }
+          }
+        }
+        placeDetail {
+          data {
+            attributes {
+              slug
+            }
+          }
+        }
+        categories(pagination: { limit: 999 }) {
+          data {
+            attributes {
+              Name
+              icon {
+                data {
+                  attributes {
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+query LuxuryOnWheel{
+	luxuryOnWheel{
+    data{
+      attributes{
+        content{
+          __typename
+          ... on ComponentCommonBanner{
+            id
+            title
+            description
+            image{
+              data{
+                attributes{
+                  url
+                }
+              }
+            }
+          }
+          ... on ComponentLuxuryOnWheels{
+            id
+            title
+            description
+            link
+            image{
+              data{
+                attributes{
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }  
+}

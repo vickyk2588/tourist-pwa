@@ -1,0 +1,12 @@
+query FetchMoreActivity{
+moreActivity{
+  data{
+     attributes{
+   		activity(pagination:{pageSize:999}){
+    		name
+				link
+  		}
+   	 }
+  	}
+	}
+}

@@ -1,0 +1,32 @@
+query TravelGuide{
+ 	 rajasthanTravelGuide{
+    data{
+      attributes{
+        title_1,
+        title_2,
+        description
+        content{
+          __typename
+          ... on ComponentGuideTravelGuide{
+            travel_guides{
+              data{
+                attributes{
+										title
+                    description
+                    link
+                    image{
+                      data{
+                        attributes{
+                          url
+                        }
+                      }
+                    }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

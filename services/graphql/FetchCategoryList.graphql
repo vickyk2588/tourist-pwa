@@ -1,0 +1,10 @@
+query FetchCategoryList{
+  categories{
+    data{
+    id
+      attributes{
+        Name
+      }
+    }
+  }
+}

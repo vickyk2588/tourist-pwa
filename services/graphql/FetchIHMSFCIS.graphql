@@ -1,0 +1,17 @@
+query FetchIHMSFCIS{
+  ihmsAndFci{
+    data{
+      attributes{
+         content{
+          __typename
+          
+          ... on ComponentCommonPermissions{
+            id
+            title
+            link
+          }
+        }
+      }
+    }
+  }
+}

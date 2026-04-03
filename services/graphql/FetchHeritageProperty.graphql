@@ -1,0 +1,60 @@
+query FetchHeritageProperty {
+  heritageProperty {
+    data {
+      attributes {
+        content {
+          __typename
+
+          ... on ComponentCommonBanner {
+            id
+            title
+            description
+            image {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+          }
+
+          ... on ComponentHeritagePropertyAddEntry {
+            id
+            content {
+              id
+              city {
+                data {
+                  attributes {
+                    name
+                  }
+                }
+              }
+
+            places {
+                data {
+                  attributes {
+                    name
+                    mobile
+                    mobile2
+                    website
+                    locationDetail
+                    email
+                    description
+                    link
+                    map {
+                      data {
+                        attributes {
+                          url
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

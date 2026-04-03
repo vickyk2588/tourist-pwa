@@ -1,0 +1,40 @@
+query FetchActivity{
+  topActivities {
+    data {
+      attributes {
+        activities {
+          data {
+            attributes {
+              name
+              description
+              link
+              image{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        city {
+          data {
+            attributes {
+              name
+              description
+              image{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

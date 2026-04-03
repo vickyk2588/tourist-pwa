@@ -1,0 +1,82 @@
+query FetchFilmistan {
+  films (pagination:{pageSize:999}){
+  __typename
+    data{
+      attributes {
+        title
+        description
+        filmType
+
+        bannerImage {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+  filmistan {
+    data {
+      id
+      attributes {
+        content {
+          __typename
+          ... on ComponentFilmistanBanner {
+            __typename
+            bannerTitle
+            bannerDetails
+            bannerDetails2
+            bannerImage {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+          }
+          ... on ComponentFilmistanLocation {
+            title
+            cities {
+              data {
+                attributes {
+                  cityDetail{
+                    data{
+                      attributes{
+                        slug
+                      }
+                    }
+                  }
+                  name
+                  image{
+                    data{
+                      attributes{
+                        url
+                        
+                      }
+                      
+                    }
+                    
+                  }
+                }
+              }
+            }
+            __typename
+          }
+          ... on ComponentFilmistanPermissions {
+            title
+            content {
+              title
+              type
+              content {
+                title
+                link
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

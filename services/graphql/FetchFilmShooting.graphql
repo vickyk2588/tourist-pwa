@@ -1,0 +1,32 @@
+query FetchFilmShooting{
+  filmShooting{
+    data{
+      attributes{
+        content{
+          __typename
+          
+          ... on ComponentShootingBanner{
+            id
+            header
+            header2
+            detailHeader
+            detail
+            detail2
+          }
+          
+          ... on ComponentShootingPermission{
+            id
+            title
+            description
+            type
+            content{
+              id
+              title
+              link
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+query FetchHomeSearch($searchKey: String, $page: Int = 1, $pageSize: Int = 999) {
+  places(
+    pagination: { page: $page, pageSize: $pageSize }
+    filters: {
+      or: [
+        { name: { contains: $searchKey } }
+        { city: { name: { contains: $searchKey } } }
+      ]
+    }
+  ) {
+    data {
+      attributes {
+        name
+
+        placeDetail {
+          data {
+            attributes {
+              slug
+            }
+          }
+        }
+
+        categories {
+          data {
+            attributes {
+              Name
+
+              icon {
+                data {
+                  attributes {
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        city {
+          data {
+            attributes {
+              name
+image{
+  data{
+  attributes{
+  url
+  }
+  }
+}
+              cityDetail {
+                data {
+                  attributes {
+                    slug
+
+                    city {
+                      data {
+                        attributes {
+                          name
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

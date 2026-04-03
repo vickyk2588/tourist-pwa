@@ -1,0 +1,36 @@
+query FetchContactUs{
+  contactUs{
+    data{
+      attributes{
+        content{
+          __typename
+          
+          ... on ComponentFilmistanBanner{
+            id
+            bannerTitle
+            bannerImage{
+              data{
+                attributes{
+                  url
+                }
+              }
+            }
+            
+          }
+          
+          ... on ComponentContactusContactEntry{
+            id
+            header
+            content{
+              id
+              title
+              details
+              type
+            }
+          }
+          
+        }
+      }
+    }
+  }
+}

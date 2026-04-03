@@ -1,0 +1,13 @@
+query FetchOther{
+  other{
+    data{
+      attributes{
+        content{
+          id
+          title
+          link
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+query FetchFairsAndFestival($id:ID){
+  fairsAndFestivalListBanner {
+    data {
+      attributes {
+        banner {
+          title
+
+          description
+
+          image {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  festivalsAndFairs(filters:{ id:{eq:$id}}){
+    data {
+      id
+      attributes {
+         image{
+          data{
+            attributes{
+              url
+            }
+          }
+        }
+        name
+        details
+        fromDate
+        toDate
+        map{
+          planeRoute
+          carRoute
+          trainRoute
+          mapImage{
+            data{
+              attributes{
+                url
+              }
+            }
+          }
+        }
+        popularity
+        city {
+          data {
+            attributes {
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+}

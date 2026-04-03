@@ -1,0 +1,34 @@
+query FetchExhibitDetail($slug: String, $exhibitSlug: String) {
+  placeDetails(filters: { slug: { eq: $slug } }) {
+    data {
+      attributes {
+        content {
+          ... on ComponentPlaceDetailPlaceexhibit {
+            __typename
+            id
+            exhibit(
+              pagination: { limit: 999 }
+              filters: { slug: { eq: $exhibitSlug } }
+            ) {
+              name
+              slug
+              content {
+                title
+                description
+                image {
+                  data {
+                    id
+                    attributes {
+                      url
+                      alternativeText
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+query FetchExploreAllArrange {
+  exploreAllArrange {
+    data {
+      attributes {
+        explore_alls {
+          data {
+            id
+            attributes {
+              category {
+                data {
+                  id
+                  attributes {
+                    Name
+                  }
+                }
+              }
+              content {
+                __typename
+                ... on ComponentExploreHeaderCity {
+                  id
+                  cityHeader
+                  cities {
+                    data {
+                      id
+                      attributes {
+                        name
+                        image {
+                          data {
+                            attributes {
+                              url
+                            }
+                          }
+                        }
+                        cityDetail {
+                          data {
+                            attributes {
+                              slug
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+
+                ... on ComponentExploreHeaderPlace {
+                  id
+                  placeHeader
+                  places {
+                    data {
+                      id
+                      attributes {
+                        name
+                        placeDetail {
+                          data {
+                            attributes {
+                              slug
+                            }
+                          }
+                        }
+                        images {
+                          data {
+                            attributes {
+                              url
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

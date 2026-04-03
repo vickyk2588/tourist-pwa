@@ -1,0 +1,28 @@
+query FetchLuxuryOnWheelsDetail{
+  luxuryOnWheelsDetail {
+    data {
+      attributes {
+        wheels {    
+          wheels {
+            image {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+            title
+            title2
+            description
+            link
+          }
+
+          facilities {
+            Title
+            Details
+          }
+        }
+      }
+    }
+  }
+}

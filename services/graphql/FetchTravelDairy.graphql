@@ -1,0 +1,47 @@
+query FetchTravelDairy{
+	travelDairy{
+    data{
+      attributes{
+        content{
+          __typename
+          ... on ComponentCommonBanner{
+            id
+            title
+            description
+            image{
+              data{
+                attributes{
+                  url
+                }
+              }
+            }
+          }
+          ... on ComponentDairyBlogs{
+            id
+            title
+            description
+            Info{
+              name
+              date
+              link
+              image{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
+              locations{
+                data{
+                  attributes{
+                    name
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

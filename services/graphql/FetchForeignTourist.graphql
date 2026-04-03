@@ -1,0 +1,31 @@
+query FetchForeignTourist{
+foreignTourist{
+  data{
+    attributes{
+      content{
+        __typename
+        
+        ... on ComponentFilmistanBanner{
+          id
+          bannerTitle
+          bannerDetails
+          bannerDetails2
+          bannerImage{
+            data{
+              attributes{
+                url
+              }
+            }
+          }
+        }
+        
+        ... on ComponentForeignInfo{
+          id
+          title
+          description
+        }
+      }
+    }
+  }
+}
+}

@@ -1,0 +1,644 @@
+query FetchHomeData {
+  categories {
+    data {
+      attributes {
+        Name
+        places {
+          data {
+            attributes {
+              name
+              city {
+                data {
+                  attributes {
+                    name
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  home {
+    data {
+      attributes {
+        home {
+          __typename
+
+          ... on ComponentHomeSlider {
+            id
+            Title
+            highlightedText
+            video{
+              data{
+                attributes{
+                  url
+                }
+              }
+            }
+          }
+
+          ... on ComponentHomeDiscoverRealBeauty {
+            id
+            title
+            headerTitle
+            highlightedText
+            description
+            image {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+          }
+
+          ... on ComponentHomePlaces {
+            id
+            Name
+            Category {
+              id
+              category {
+                data {
+                  attributes {
+                    Name
+                    icon {
+                      data {
+                        id
+                      }
+                    }
+                  }
+                }
+              }
+              places(pagination: { limit: 100 }) {
+                    data {
+                      id
+                      attributes {
+                        name
+                        link
+                        images {
+                      data {
+                        attributes {
+                          url
+                        }
+                      }
+                    }
+                     city {
+                      data {
+                        attributes {
+                          name
+                        }
+                      }
+                    }
+                       placeDetail {
+                          data {
+                            attributes {
+                              slug
+                              content {
+                                __typename
+                                ... on ComponentPlaceDetailPlacetickets {
+                                  id
+                                  title1
+                                  title2
+                                  information {
+                                    title
+                                    description
+                                  }
+                                  card {
+                                    title
+                                    content {
+                                      name
+                                      value
+                                    }
+                                  }
+                                }
+                                 ... on ComponentPlaceDetailPlaceothers {
+                                    id
+                                    title1
+                                    title2
+                                    card(pagination: { limit: 100 }) {
+                                      title
+                                      content(pagination: { limit: 100 }) {
+                                        name
+                                        value
+                                      }
+                                    }
+                                  }
+                                   ... on ComponentPlaceDetailPlaceTime {
+                                      id
+                                      tabName
+                                      card(pagination: { limit: 100 }) {
+                                        title
+                                        content(pagination: { limit: 100 }) {
+                                          name
+                                          value
+                                        }
+                                      }
+                                    }
+                                   
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+            }
+          }
+
+          ... on ComponentHomeDiscoverBeautifulPlace {
+            id
+            title
+            content {
+              id
+              description
+              title
+              image{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
+              place {
+                data {
+                  attributes {
+                    name
+                      placeDetail{
+                      data{
+                        attributes{
+                          slug
+                        }
+                      }
+                    }
+                    images {
+                      data {
+                        attributes {
+                          url
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              video {
+                data {
+                  attributes {
+                    url
+                  }
+                }
+              }
+            }
+          }
+
+          ... on ComponentHomeWildLife {
+             id
+            title
+            category {
+              data {
+                id
+                attributes {
+                  Name
+                  places(pagination: { limit: 100 }) {
+                    data {
+                      id
+                      attributes {
+                        name
+                        link
+                        images {
+                      data {
+                        attributes {
+                          url
+                        }
+                      }
+                    }
+                     city {
+                      data {
+                        attributes {
+                          name
+                        }
+                      }
+                    }
+                       placeDetail {
+                          data {
+                            attributes {
+                              slug
+                              content {
+                                __typename
+                                ... on ComponentPlaceDetailPlacetickets {
+                                  id
+                                  title1
+                                  title2
+                                  information {
+                                    title
+                                    description
+                                  }
+                                  card {
+                                    title
+                                    content {
+                                      name
+                                      value
+                                    }
+                                  }
+                                }
+                                 ... on ComponentPlaceDetailPlaceothers {
+                                    id
+                                    title1
+                                    title2
+                                    card(pagination: { limit: 100 }) {
+                                      title
+                                      content(pagination: { limit: 100 }) {
+                                        name
+                                        value
+                                      }
+                                    }
+                                  }
+                                   ... on ComponentPlaceDetailPlaceTime {
+                                      id
+                                      tabName
+                                      card(pagination: { limit: 100 }) {
+                                        title
+                                        content(pagination: { limit: 100 }) {
+                                          name
+                                          value
+                                        }
+                                      }
+                                    }
+                                    
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          ... on ComponentHomeMonuments {
+             id
+            title
+            category {
+              data {
+                id
+                attributes {
+                  Name
+                  places(pagination: { limit: 100 }) {
+                    data {
+                      id
+                      attributes {
+                        name
+                        link
+                        images {
+                          data {
+                            attributes {
+                              url
+                            }
+                          }
+                        }
+                        city {
+                          data {
+                            attributes {
+                              name
+                            }
+                          }
+                        }
+                       placeDetail {
+                          data {
+                            attributes {
+                              slug
+                              content {
+                                __typename
+                                ... on ComponentPlaceDetailPlacetickets {
+                                  id
+                                  title1
+                                  title2
+                                  information {
+                                    title
+                                    description
+                                  }
+                                  card {
+                                    title
+                                    content {
+                                      name
+                                      value
+                                    }
+                                  }
+                                }
+                                 ... on ComponentPlaceDetailPlaceothers {
+                                    id
+                                    title1
+                                    title2
+                                    card(pagination: { limit: 100 }) {
+                                      title
+                                      content(pagination: { limit: 100 }) {
+                                        name
+                                        value
+                                      }
+                                    }
+                                  }
+                                  ... on ComponentPlaceDetailPlaceTime {
+                                      id
+                                      tabName
+                                      card(pagination: { limit: 100 }) {
+                                        title
+                                        content(pagination: { limit: 100 }) {
+                                          name
+                                          value
+                                        }
+                                      }
+                                    }
+                                   
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          ... on ComponentHomeLeader {
+            id
+            title
+            content {
+              id
+              name
+              image {
+                data {
+                  attributes {
+                    url
+                  }
+                }
+              }
+              designation
+            }
+          }
+          ... on ComponentHomeCafeteria {
+            id
+            title
+            category {
+              data {
+                id
+                attributes {
+                  Name
+                  places(pagination: { limit: 100 }) {
+                    data {
+                      id
+                      attributes {
+                        name
+                        link
+                        images {
+                          data {
+                            attributes {
+                              url
+                            }
+                          }
+                        }
+                        city {
+                          data {
+                            attributes {
+                              name
+                            }
+                          }
+                        }
+                       placeDetail {
+                          data {
+                            attributes {
+                              slug
+                              content {
+                                __typename
+                                ... on ComponentPlaceDetailPlacetickets {
+                                  id
+                                  title1
+                                  title2
+                                  information {
+                                    title
+                                    description
+                                  }
+                                  card {
+                                    title
+                                    content {
+                                      name
+                                      value
+                                    }
+                                  }
+                                }
+                                 ... on ComponentPlaceDetailPlaceothers {
+                                    id
+                                    title1
+                                    title2
+                                    card(pagination: { limit: 100 }) {
+                                      title
+                                      content(pagination: { limit: 100 }) {
+                                        name
+                                        value
+                                      }
+                                    }
+                                  }
+                                  ... on ComponentPlaceDetailPlaceTime {
+                                      id
+                                      tabName
+                                      card(pagination: { limit: 100 }) {
+                                        title
+                                        content(pagination: { limit: 100 }) {
+                                          name
+                                          value
+                                        }
+                                      }
+                                    }
+                                  
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          ... on ComponentHomeMuseum {
+            id
+            title
+            category {
+              data {
+                id
+                attributes {
+                  Name
+                  places(pagination: { limit: 100 }) {
+                    data {
+                      id
+                      attributes {
+                        name
+                        link
+                        images {
+                          data {
+                            attributes {
+                              url
+                            }
+                          }
+                        }
+                        city {
+                          data {
+                            attributes {
+                              name
+                            }
+                          }
+                        }
+                        placeDetail {
+                          data {
+                            attributes {
+                              slug
+                              content {
+                                __typename
+                                ... on ComponentPlaceDetailPlacetickets {
+                                  id
+                                  title1
+                                  title2
+                                  information {
+                                    title
+                                    description
+                                  }
+                                  card {
+                                    title
+                                    content {
+                                      name
+                                      value
+                                    }
+                                  }
+                                }
+                                 ... on ComponentPlaceDetailPlaceothers {
+                                    id
+                                    title1
+                                    title2
+                                    card(pagination: { limit: 100 }) {
+                                      title
+                                      content(pagination: { limit: 100 }) {
+                                        name
+                                        value
+                                      }
+                                    }
+                                  }
+                                  ... on ComponentPlaceDetailPlaceTime {
+                                      id
+                                      tabName
+                                      card(pagination: { limit: 100 }) {
+                                        title
+                                        content(pagination: { limit: 100 }) {
+                                          name
+                                          value
+                                        }
+                                      }
+                                    }
+
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+           ... on ComponentHomeLightAndSoundShow {
+             id
+            title
+            category {
+              data {
+                id
+                attributes {
+                  Name
+                  places(pagination: { limit: 100 }) {
+                    data {
+                      id
+                      attributes {
+                        name
+                        link
+                        images {
+                      data {
+                        attributes {
+                          url
+                        }
+                      }
+                    }
+                     city {
+                      data {
+                        attributes {
+                          name
+                        }
+                      }
+                    }
+                       placeDetail {
+                          data {
+                            attributes {
+                              slug
+                              content {
+                                __typename
+                                ... on ComponentPlaceDetailPlacetickets {
+                                  id
+                                  title1
+                                  title2
+                                  information {
+                                    title
+                                    description
+                                  }
+                                  card {
+                                    title
+                                    content {
+                                      name
+                                      value
+                                    }
+                                  }
+                                }
+                                 ... on ComponentPlaceDetailPlaceothers {
+                                    id
+                                    title1
+                                    title2
+                                    card(pagination: { limit: 100 }) {
+                                      title
+                                      content(pagination: { limit: 100 }) {
+                                        name
+                                        value
+                                      }
+                                    }
+                                  }
+                                  ... on ComponentPlaceDetailPlaceTime {
+                                      id
+                                      tabName
+                                      card(pagination: { limit: 100 }) {
+                                        title
+                                        content(pagination: { limit: 100 }) {
+                                          name
+                                          value
+                                        }
+                                      }
+                                    }
+                                    
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

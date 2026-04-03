@@ -1,0 +1,49 @@
+query FetchAdventure{
+  adventureListBanner {
+    data {
+      attributes {
+        banner {
+          title
+
+          description
+
+          image {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  adventures {
+    data {
+      attributes {
+        name
+
+        details
+
+        image {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+
+        city {
+          data {
+            attributes {
+              name
+            }
+          }
+        }
+
+        popularity
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+query FetchPackage{
+  allPackage{
+    data{
+      attributes{
+        content{
+          __typename
+          
+          ... on ComponentFilmistanBanner{
+             id
+            bannerTitle
+            bannerDetails
+            bannerImage{
+              data{
+                attributes{
+                  url
+                }
+              }
+            }
+          }
+          
+          ... on ComponentPackagePackage{
+            id
+            title
+            totalPackage
+            description
+						packages(pagination:{pageSize:999}){
+              __typename
+              data{
+                attributes{
+                  name
+                  link
+                  image{
+                    data{
+                      attributes{
+                        name
+                        url
+                      }
+                    }
+                  }
+                  description
+                  rating
+                  popularity
+                  price
+                  package_detail{
+                    data{
+                      attributes{
+                        slug
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          
+      
+        }
+      }
+    }
+  }
+}

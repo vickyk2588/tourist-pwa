@@ -1,0 +1,21 @@
+query FetchEmployeeCorner{
+  employeeCorner {
+    data {
+      attributes {
+        content {
+          __typename
+
+          ... on ComponentEmployeeCornerDetails{
+            id
+            content{
+              id
+              description
+              title
+            }
+          }
+          
+        }
+      }
+    }
+  }
+}

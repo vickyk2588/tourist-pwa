@@ -1,0 +1,27 @@
+query FetchUpcomingEvents {
+  upcomingEvents(
+    filters: { eventStartDate: { gte: "2026-03-18" } }, 
+    sort: "eventStartDate:asc"
+  ) {
+    data {
+      id
+      attributes {
+        eventTitle
+        sectionName
+        organizedBy
+        eventStartDate
+        eventEndDate
+        eventTime
+        eventPhoto {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+        eventType
+        isFeatured
+      }
+    }
+  }
+}

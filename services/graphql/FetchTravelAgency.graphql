@@ -1,0 +1,36 @@
+query FetchTravelAgency{
+  registrationForTravelAgency{
+    data{
+      attributes{
+        content{
+          __typename
+          
+          ... on ComponentTravelAgencyBanner{
+          id
+          bannerTitle
+          bannerDetail
+          bannerDetail2
+          bannerImage{
+            data{
+              attributes{
+                url
+              }
+            }
+          }
+        }
+          
+          ... on ComponentCommonPolicyCard{
+            id
+            title
+            type
+            content{
+              id
+              title
+              link
+            }
+          }
+        }
+      }
+    }
+  }
+}

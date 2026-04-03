@@ -1,0 +1,30 @@
+query TravelDesk{
+	travelDesk{
+    data{
+      attributes{
+        banner{
+          __typename
+          ... on ComponentCommonBanner{
+            id,
+            title
+            description
+            image{
+              data{
+                attributes{
+                  url
+                }
+              }
+            }
+          }
+          ... on ComponentTravelDeskContent{
+            id,
+            desk{
+              name
+              link
+            }
+          }
+        }
+      }
+    }
+  }  
+}

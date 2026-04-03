@@ -1,0 +1,89 @@
+query FetchTouristAttraction(
+  $pageParam: Int
+  $id: ID
+  $sortBy: [String]
+  $searchKey: String
+  $cityName: String
+) {
+  places(
+    filters: {
+      and: [
+        { categories: { id: { eq: $id } } }
+        { name: { containsi: $searchKey } }
+        { city: { name: { containsi: $cityName } } }
+      ]
+    }
+    pagination: { pageSize: 20, page: $pageParam }
+    sort: $sortBy
+  ) {
+    meta {
+      pagination {
+        page
+        pageSize
+        total
+        pageCount
+      }
+    }
+    data {
+      attributes {
+        city {
+          data {
+            attributes {
+              name
+            }
+          }
+        }
+        popularity
+        name
+        categories {
+          data {
+            id
+            attributes {
+              Name
+            }
+          }
+        }
+        images {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+        placeDetail {
+          data {
+            attributes {
+              slug
+            }
+          }
+        }
+      }
+    }
+  }
+  seeAllPlace {
+    data {
+      id
+      attributes {
+        content {
+          __typename
+          ... on ComponentPlacePlaceContent {
+            Title
+          }
+          ... on ComponentPlacePlaceHeader {
+            id
+            title1
+            title2
+            title3
+            image {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

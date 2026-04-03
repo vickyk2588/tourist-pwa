@@ -1,0 +1,65 @@
+query FetchExplore {
+  explore {
+    data {
+      attributes {
+        content {
+          ... on ComponentExploreExplore2 {
+            content {
+              __typename
+              category {
+                data {
+                  id
+                  attributes {
+                    Name
+                  }
+                }
+              }
+              cities {
+                data {
+                  attributes {
+                    name
+                    image {
+                      data {
+                        attributes {
+                          url
+                        }
+                      }
+                    }
+                    cityDetail {
+                      data {
+                        attributes {
+                          slug
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              places {
+                data {
+                  attributes {
+                    name
+                    placeDetail {
+                      data {
+                        attributes {
+                          slug
+                        }
+                      }
+                    }
+                    images {
+                      data {
+                        attributes {
+                          url
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

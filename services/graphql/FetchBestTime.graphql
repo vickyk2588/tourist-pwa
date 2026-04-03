@@ -1,0 +1,47 @@
+query FetchBestTime
+{
+  bestTime{
+    data{
+      attributes{
+        header
+        content
+        {
+          __typename
+          
+          ... on ComponentBestTimeBestTimeDetails{
+            id
+            description
+            align
+            image{
+              data{
+                 attributes{
+                  url
+                }
+              }
+            }
+          }
+           
+           ... on ComponentBestTimeWeatherCondition{
+             id
+            header
+            content{
+              id
+              title
+              location
+              temperature
+              weather
+              image{
+                data{
+                  attributes{
+                    url
+                  }
+                }
+              }
+            }
+          }
+          
+        }
+      }
+    }
+  }
+}

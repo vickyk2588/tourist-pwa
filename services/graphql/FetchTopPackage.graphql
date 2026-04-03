@@ -1,0 +1,40 @@
+query FetchTopPackage {
+  
+  topPackage {
+    __typename
+    data {
+      id
+      attributes {
+        package{
+        package{
+          data{
+            attributes{
+              link
+              image{
+                data{
+                  attributes{
+                    url
+                  
+                  }
+                  
+                }
+              }
+              name
+              price
+              rating
+              description
+               package_detail{
+                    data{
+                      attributes{
+                        slug
+                      }
+                    }
+                  }
+            }
+          }
+        }
+      }
+      }
+    }
+  }
+}

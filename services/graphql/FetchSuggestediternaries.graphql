@@ -1,0 +1,35 @@
+query FetchSuggestediternaries{
+  suggestedItinerie{
+    data{
+      attributes{
+        title
+        content{
+          __typename
+          
+          ...on ComponentCommonBanner{
+            id
+            title
+            description
+            image{
+              data{
+                attributes{
+                  url
+                }
+              }
+            }
+          }
+          
+       ... on ComponentSuggestedItineriesItinerary{
+        id
+        titile
+        cityItinerary{
+          details
+          title
+        }
+      }
+          
+        }
+      }
+    }
+  }
+}

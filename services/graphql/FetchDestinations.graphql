@@ -1,0 +1,63 @@
+query FetchDestination($pageParam: Int, $sortBy: [String], $searchKey: String) {
+  cities(
+    pagination: { pageSize: 50, page: $pageParam }
+    sort: $sortBy
+    filters: { name: { containsi: $searchKey } }
+  ) {
+    meta {
+      pagination {
+        page
+        pageSize
+        total
+        pageCount
+      }
+    }
+    data {
+      attributes {
+        name
+        popularity
+        image {
+          data {
+            attributes {
+              url
+            }
+          }
+        }
+        cityDetail {
+          data {
+            attributes {
+              slug
+            }
+          }
+        }
+      }
+    }
+  }
+  destination {
+    data {
+      id
+      attributes {
+        content {
+          ... on ComponentDestinationDestHeader {
+            __typename
+            id
+            title1
+            title2
+            title3
+            image {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+          }
+          ... on ComponentDestinationDestContent {
+            __typename
+            id
+          }
+        }
+      }
+    }
+  }
+}

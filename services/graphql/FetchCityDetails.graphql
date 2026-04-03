@@ -1,0 +1,207 @@
+query FetchCityDetails($slug: String) {
+  cityDetails(filters: { slug: { eq: $slug } }) {
+    data {
+      attributes {
+        city {
+          data {
+            attributes {
+              name
+              nickname
+              image {
+                data {
+                  attributes {
+                    url
+                  }
+                }
+              }
+              description
+              places(pagination:{pageSize:999}){
+                data {
+                  id
+                  attributes {
+                    name
+                        categories {
+                          data {
+                            attributes {
+                              Name
+
+                              icon {
+                                data {
+                                  attributes {
+                                    url
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                    placeDetail {
+                      data {
+                        attributes {
+                          slug
+                        }
+                      }
+                    }
+                    description
+                    images {
+                      data {
+                        attributes {
+                          url
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              festivalsAndFairs(pagination:{pageSize:999}) {
+                data {
+                  id
+                  attributes {
+                    name
+                    details
+                    image {
+                      data {
+                        attributes {
+                          url
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              activities(pagination:{pageSize:999}) {
+                data {
+                  id
+                  attributes {
+                    name
+                    description
+                    link
+                    image {
+                      data {
+                        attributes {
+                          url
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              howToReachHere {
+                mapImage {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                planeRoute
+                carRoute
+                trainRoute
+              }
+            }
+          }
+        }
+        content {
+          __typename
+
+          ... on ComponentCityDetailHeader {
+            id
+            imageText
+          }
+
+          ... on ComponentCityDetailPlaces {
+            id
+            title
+            description
+            icon {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+          }
+
+          ... on ComponentCityDetailFairs {
+            id
+            title
+            description
+            icon {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+          }
+
+          ... on ComponentCityDetailActivities {
+            id
+            title
+            description
+            icon {
+              data {
+                attributes {
+                  url
+                }
+              }
+            }
+          }
+
+          ... on ComponentCityDetailCombine {
+            id
+            highlightedText
+            title
+            description
+            link
+            places {
+              data {
+                id
+                attributes {
+                  images {
+                    data {
+                      attributes {
+                        url
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          ... on ComponentCityDetailHowToReachThere {
+            id
+          }
+
+          ... on ComponentCityDetailVisit {
+            id
+          }
+
+          ... on ComponentCityDetailCitiesToVisit {
+            id
+            cities {
+              id
+              distance
+              city {
+                data {
+                  attributes {
+                    name
+
+                    image {
+                      data {
+                        attributes {
+                          url
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -10,7 +10,6 @@
     "codegen": "graphql-codegen --watch"
   },
   "dependencies": {
-    "@apollo/client": "^4.1.6",
     "@ducanh2912/next-pwa": "^10.2.9",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
@@ -24,7 +23,6 @@
     "dayjs": "^1.11.20",
     "graphql": "^16.13.2",
     "graphql-request": "^7.4.0",
-    "graphql-tag": "^2.12.6",
     "next": "16.2.2",
     "react": "19.2.4",
     "react-dom": "19.2.4",
@@ -47,7 +45,6 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.27",
-    "dotenv": "^17.4.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.2",
     "postcss": "^8.5.8",
